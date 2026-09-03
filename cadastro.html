@@ -5,657 +5,184 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gibioteca - Cadastro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body
-    bgcolor="#FFF3D6"
-    text="#222222"
-    link="#C1121F"
-    vlink="#780000"
->
+<body class="bg-comic">
+    <div class="container py-4">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded-4 border border-2 border-warning-subtle sticky-top">
+            <div class="container-fluid px-3 py-2">
+                <a class="navbar-brand comic-title text-primary fw-bold" href="index.html">Gibioteca</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuGibioteca" aria-controls="menuGibioteca" aria-expanded="false" aria-label="Abrir menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuGibioteca">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="cadastro.html">Cadastro</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gibis.html">Gibis</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
 
-    <center>
+    <main class="container mb-5">
+        <section class="card border-0 shadow-lg rounded-4 p-4 p-md-5 bg-white">
+            <div class="text-center mb-4">
+                <h1 class="comic-title text-primary display-5">★ CADASTRE-SE NA GIBIOTECA ★</h1>
+                <p class="lead text-dark mb-0">Crie seu perfil de leitor e faça parte da nossa comunidade!</p>
+            </div>
 
-        <h1>
-            <font
-                face="Comic Sans MS"
-                size="7"
-                color="#C1121F"
-            >
-                ★ CADASTRE-SE NA GIBIOTECA ★
-            </font>
-        </h1>
+            <form action="#" method="post" class="row g-3">
+                <fieldset class="col-12 border border-2 rounded-4 p-4 mb-3">
+                    <legend class="float-none px-2 fw-bold text-primary">Dados pessoais</legend>
 
-        <h2>
-            <font
-                face="Courier New"
-                size="4"
-                color="#1D3557"
-            >
-                Crie seu perfil de leitor!
-            </font>
-        </h2>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="nome" class="form-label fw-bold">Nome</label>
+                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome completo" autocomplete="name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label fw-bold">E-mail</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="senha" class="form-label fw-bold">Senha</label>
+                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Crie uma senha" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="nascimento" class="form-label fw-bold">Data de nascimento</label>
+                            <input type="date" class="form-control" id="nascimento" name="nascimento">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="telefone" class="form-label fw-bold">Telefone</label>
+                            <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(47) 99999-9999" autocomplete="tel" pattern="\(?[0-9]{2}\)?\s?[0-9]{4,5}-?[0-9]{4}">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="numero-favoritos" class="form-label fw-bold">Gibis por mês</label>
+                            <input type="number" class="form-control" id="numero-favoritos" name="numero-favoritos" min="1" max="100" value="5" step="1">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="cor-favorita" class="form-label fw-bold">Cor preferida</label>
+                            <input type="color" class="form-control form-control-color w-100" id="cor-favorita" name="cor-favorita" value="#E63946" title="Escolha sua cor preferida">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="site-favorito" class="form-label fw-bold">Site favorito</label>
+                            <input type="url" class="form-control" id="site-favorito" name="site-favorito" placeholder="https://exemplo.com" autocomplete="url">
+                        </div>
+                    </div>
+                </fieldset>
 
-        <hr
-            width="80%"
-            size="6"
-            color="#F4A261"
-        >
+                <fieldset class="col-12 border border-2 rounded-4 p-4 mb-3">
+                    <legend class="float-none px-2 fw-bold text-warning">Seu universo de gibis</legend>
 
-        <font
-            face="Arial"
-            size="4"
-        >
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="genero" class="form-label fw-bold">Qual seu gênero favorito?</label>
+                            <select class="form-select" id="genero" name="genero" required>
+                                <option value="">Selecione uma opção</option>
+                                <option value="humor">Humor</option>
+                                <option value="aventura">Aventura</option>
+                                <option value="super-herois">Super-heróis</option>
+                                <option value="fantasia">Fantasia</option>
+                                <option value="ficcao">Ficção científica</option>
+                                <option value="terror">Terror</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <p class="fw-bold mb-2">Com que frequência você lê gibis?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="frequencia" id="diariamente" value="diariamente">
+                                <label class="form-check-label" for="diariamente">Diariamente</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="frequencia" id="semanalmente" value="semanalmente">
+                                <label class="form-check-label" for="semanalmente">Toda semana</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="frequencia" id="mensalmente" value="mensalmente">
+                                <label class="form-check-label" for="mensalmente">Todo mês</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="frequencia" id="raramente" value="raramente">
+                                <label class="form-check-label" for="raramente">De vez em quando</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <p class="fw-bold mb-2">Quais tipos de histórias você gosta?</p>
+                            <div class="row g-2">
+                                <div class="col-md-4 form-check">
+                                    <input class="form-check-input" type="checkbox" id="classicos" name="tipos" value="classicos">
+                                    <label class="form-check-label" for="classicos">Clássicos</label>
+                                </div>
+                                <div class="col-md-4 form-check">
+                                    <input class="form-check-input" type="checkbox" id="humor" name="tipos" value="humor">
+                                    <label class="form-check-label" for="humor">Humor</label>
+                                </div>
+                                <div class="col-md-4 form-check">
+                                    <input class="form-check-input" type="checkbox" id="aventura" name="tipos" value="aventura">
+                                    <label class="form-check-label" for="aventura">Aventura</label>
+                                </div>
+                                <div class="col-md-4 form-check">
+                                    <input class="form-check-input" type="checkbox" id="superherois" name="tipos" value="superherois">
+                                    <label class="form-check-label" for="superherois">Super-heróis</label>
+                                </div>
+                                <div class="col-md-4 form-check">
+                                    <input class="form-check-input" type="checkbox" id="fantasia" name="tipos" value="fantasia">
+                                    <label class="form-check-label" for="fantasia">Fantasia</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="nivel-leitura" class="form-label fw-bold">Nível de leitura (1 a 10)</label>
+                            <input type="range" class="form-range" id="nivel-leitura" name="nivel-leitura" min="1" max="10" value="5" oninput="this.nextElementSibling.value = this.value">
+                            <output for="nivel-leitura" class="d-inline-block mt-2 fw-bold text-primary">5</output>
+                        </div>
+                    </div>
+                </fieldset>
 
-            <a href="index.html">
-                <b>INÍCIO</b>
-            </a>
+                <fieldset class="col-12 border border-2 rounded-4 p-4 mb-3">
+                    <legend class="float-none px-2 fw-bold text-info">Conte para a gente!</legend>
 
-            &nbsp;&nbsp;|&nbsp;&nbsp;
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="gibi-favorito" class="form-label fw-bold">Seu gibi favorito</label>
+                            <input type="text" class="form-control" id="gibi-favorito" name="gibi-favorito" placeholder="Ex: Turma da Mônica, Batman...">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="personagem-favorito" class="form-label fw-bold">Personagem favorito</label>
+                            <input type="text" class="form-control" id="personagem-favorito" name="personagem-favorito" placeholder="Ex: Cascão, Superman...">
+                        </div>
+                        <div class="col-12">
+                            <label for="mensagem" class="form-label fw-bold">O que você gosta de ler?</label>
+                            <textarea class="form-control" id="mensagem" name="mensagem" rows="4" placeholder="Conte um pouco sobre seus gostos e suas preferências de leitura..."></textarea>
+                        </div>
+                    </div>
+                </fieldset>
 
-            
-            <a href="cadastro.html">
-                <b>CADASTRO</b>
-            </a>
-
-            &nbsp;&nbsp;|&nbsp;&nbsp;
-
-            <a href="gibis.html">
-                <b>GIBIS</b>
-            </a>
-
-            &nbsp;&nbsp;|&nbsp;&nbsp;
-
-            <a href="sobre.html">
-                <b>SOBRE</b>
-            </a>
-
-        </font>
-
-    </center>
-
-    <br><br>
-
-    <table
-        width="75%"
-        align="center"
-        bgcolor="#FFFFFF"
-        border="5"
-        cellpadding="25"
-    >
-
-        <tr>
-
-            <td>
-
-                <center>
-
-                    <h2>
-                        <font
-                            face="Comic Sans MS"
-                            size="6"
-                            color="#E63946"
-                        >
-                            SUA CARTEIRINHA DE LEITOR
-                        </font>
-                    </h2>
-
-                    <p>
-                        <font
-                            face="Georgia"
-                            size="4"
-                        >
-                            Preencha seus dados para fazer parte
-                            da nossa comunidade de leitores!
-                        </font>
-                    </p>
-
-                </center>
-
-                <hr color="#F4A261">
-
-                <br>
-
-                <form action="#" method="post">
-
-                    <fieldset>
-
-                        <legend>
-                            <font
-                                face="Comic Sans MS"
-                                size="4"
-                                color="#C1121F"
-                            >
-                                <b>Dados pessoais</b>
-                            </font>
-                        </legend>
-
-                        <br>
-
-                        <label for="nome">
-                            <font face="Arial" size="4">
-                                <b>Nome:</b>
-                            </font>
-                        </label>
-
-                        <br>
-
-                        <input
-                            type="text"
-                            id="nome"
-                            name="nome"
-                            size="50"
-                            placeholder="Digite seu nome completo"
-                            autocomplete="name"
-                            required
-                        >
-
-                        <br><br>
-
-                        <label for="email">
-                            <font face="Arial" size="4">
-                                <b>E-mail:</b>
-                            </font>
-                        </label>
-
-                        <br>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            size="50"
-                            placeholder="seuemail@exemplo.com"
-                            autocomplete="email"
-                            required
-                        >
-
-                        <br><br>
-
-                        <label for="senha">
-                            <font face="Arial" size="4">
-                                <b>Senha:</b>
-                            </font>
-                        </label>
-
-                        <br>
-
-                        <input
-                            type="password"
-                            id="senha"
-                            name="senha"
-                            size="30"
-                            placeholder="Crie uma senha"
-                            required
-                        >
-
-                        <br><br>
-
-                        <label for="nascimento">
-                            <font face="Arial" size="4">
-                                <b>Data de nascimento:</b>
-                            </font>
-                        </label>
-
-                        <br>
-
-                        <input
-                            type="date"
-                            id="nascimento"
-                            name="nascimento"
-                        >
-
-                        <br><br>
-
-                        <label for="telefone">
-                            <font face="Arial" size="4">
-                                <b>Telefone:</b>
-                            </font>
-                        </label>
-
-                        <br>
-
-                        <input
-                            type="tel"
-                            id="telefone"
-                            name="telefone"
-                            size="30"
-                            placeholder="(47) 99999-9999"
-                            autocomplete="tel"
-                            pattern="\(?[0-9]{2}\)?\s?[0-9]{4,5}-?[0-9]{4}"
-                        >
-
-                        <br><br>
-
-                        <label for="numero-favoritos">
-                            <font face="Arial" size="4">
-                                <b>Quantos gibis você lê por mês?</b>
-                            </font>
-                        </label>
-
-                        <br>
-
-                        <input
-                            type="number"
-                            id="numero-favoritos"
-                            name="numero-favoritos"
-                            min="1"
-                            max="100"
-                            value="5"
-                            step="1"
-                        >
-
-                        <br><br>
-
-                        <label for="cor-favorita">
-                            <font face="Arial" size="4">
-                                <b>Escolha sua cor preferida:</b>
-                            </font>
-                        </label>
-
-                        <br>
-
-                        <input
-                            type="color"
-                            id="cor-favorita"
-                            name="cor-favorita"
-                            value="#E63946"
-                        >
-
-                        <br><br>
-
-                        <label for="site-favorito">
-                            <font face="Arial" size="4"><b>Site sobre gibis:</b></font>
-                        </label>
-
-                        <br>
-
-                        <input
-                            type="url"
-                            id="site-favorito"
-                            name="site-favorito"
-                            size="50"
-                            placeholder="https://exemplo.com"
-                            autocomplete="url"
-                        >
-
-                    </fieldset>
-
+                <div class="col-12 text-center">
+                    <div class="form-check d-inline-flex align-items-center gap-2 mb-3">
+                        <input class="form-check-input mt-0" type="checkbox" id="termos" name="termos" required>
+                        <label class="form-check-label fw-bold" for="termos">Aceito fazer parte da Gibioteca.</label>
+                    </div>
                     <br>
-
-                    <fieldset>
-
-                        <legend>
-                            <font
-                                face="Comic Sans MS"
-                                size="4"
-                                color="#F4A261"
-                            >
-                                <b>Seu universo de gibis</b>
-                            </font>
-                        </legend>
-
-                        <br>
-
-                        <label for="genero">
-                            <font face="Arial" size="4">
-                                <b>Qual seu gênero favorito?</b>
-                            </font>
-                        </label>
-
-                        <br><br>
-
-                        <select
-                            id="genero"
-                            name="genero"
-                            required
-                        >
-
-                            <option value="">
-                                Selecione uma opção
-                            </option>
-
-                            <option value="humor">
-                                Humor
-                            </option>
-
-                            <option value="aventura">
-                                Aventura
-                            </option>
-
-                            <option value="super-herois">
-                                Super-heróis
-                            </option>
-
-                            <option value="fantasia">
-                                Fantasia
-                            </option>
-
-                            <option value="ficcao">
-                                Ficção científica
-                            </option>
-
-                            <option value="terror">
-                                Terror
-                            </option>
-
-                            <option value="outros">
-                                Outros
-                            </option>
-
-                        </select>
-
-                        <br><br>
-
-                        <font
-                            face="Arial"
-                            size="4"
-                        >
-                            <b>Com que frequência você lê gibis?</b>
-                        </font>
-
-                        <br><br>
-
-                        <input
-                            type="radio"
-                            id="diariamente"
-                            name="frequencia"
-                            value="diariamente"
-                        >
-
-                        <label for="diariamente">
-                            Diariamente
-                        </label>
-
-                        <br>
-
-                        <input
-                            type="radio"
-                            id="semanalmente"
-                            name="frequencia"
-                            value="semanalmente"
-                        >
-
-                        <label for="semanalmente">
-                            Toda semana
-                        </label>
-
-                        <br>
-
-                        <input
-                            type="radio"
-                            id="mensalmente"
-                            name="frequencia"
-                            value="mensalmente"
-                        >
-
-                        <label for="mensalmente">
-                            Todo mês
-                        </label>
-
-                        <br>
-
-                        <input
-                            type="radio"
-                            id="raramente"
-                            name="frequencia"
-                            value="raramente"
-                        >
-
-                        <label for="raramente">
-                            De vez em quando
-                        </label>
-
-                        <br><br>
-
-                        <font
-                            face="Arial"
-                            size="4"
-                        >
-                            <b>Quais tipos de histórias você gosta?</b>
-                        </font>
-
-                        <br><br>
-
-                        <input
-                            type="checkbox"
-                            id="classicos"
-                            name="tipos"
-                            value="classicos"
-                        >
-
-                        <label for="classicos">
-                            Clássicos
-                        </label>
-
-                        <br>
-
-                        <input
-                            type="checkbox"
-                            id="humor"
-                            name="tipos"
-                            value="humor"
-                        >
-
-                        <label for="humor">
-                            Humor
-                        </label>
-
-                        <br>
-
-                        <input
-                            type="checkbox"
-                            id="aventura"
-                            name="tipos"
-                            value="aventura"
-                        >
-
-                        <label for="aventura">
-                            Aventura
-                        </label>
-
-                        <br>
-
-                        <input
-                            type="checkbox"
-                            id="superherois"
-                            name="tipos"
-                            value="superherois"
-                        >
-
-                        <label for="superherois">
-                            Super-heróis
-                        </label>
-
-                        <br>
-
-                        <input
-                            type="checkbox"
-                            id="fantasia"
-                            name="tipos"
-                            value="fantasia"
-                        >
-
-                        <label for="fantasia">
-                            Fantasia
-                        </label>
-
-                        <br><br>
-
-                        <label for="nivel-leitura">
-                            <font face="Arial" size="4"><b>Nível de leitura (1 a 10):</b></font>
-                        </label>
-
-                        <input
-                            type="range"
-                            id="nivel-leitura"
-                            name="nivel-leitura"
-                            min="1"
-                            max="10"
-                            value="5"
-                            oninput="this.nextElementSibling.value = this.value"
-                        >
-                        <output for="nivel-leitura">5</output>
-
-                    </fieldset>
-
-                    <br>
-
-                    <fieldset>
-
-                        <legend>
-                            <font
-                                face="Comic Sans MS"
-                                size="4"
-                                color="#457B9D"
-                            >
-                                <b>Conte para a gente!</b>
-                            </font>
-                        </legend>
-
-                        <br>
-
-                        <label for="gibi-favorito">
-                            <font
-                                face="Arial"
-                                size="4"
-                            >
-                                <b>Qual é o seu gibi favorito?</b>
-                            </font>
-                        </label>
-
-                        <br><br>
-
-                        <input
-                            type="text"
-                            id="gibi-favorito"
-                            name="gibi-favorito"
-                            size="50"
-                            placeholder="Ex.: Turma da Mônica"
-                            list="sugestoes-gibis"
-                        >
-
-                        <datalist id="sugestoes-gibis">
-                            <option value="Turma da Mônica">
-                            <option value="Batman">
-                            <option value="Aventuras Fantásticas">
-                        </datalist>
-
-                        <br><br>
-
-                        <label for="historia">
-                            <font
-                                face="Arial"
-                                size="4"
-                            >
-                                <b>Conte um pouco sobre ele:</b>
-                            </font>
-                        </label>
-
-                        <br><br>
-
-                        <textarea
-                            id="historia"
-                            name="historia"
-                            rows="7"
-                            cols="55"
-                            placeholder="Por que você gosta desse gibi?"
-                        ></textarea>
-
-                    </fieldset>
-
-                    <br>
-
-                    <center>
-
-                        <input
-                            type="checkbox"
-                            id="termos"
-                            name="termos"
-                            required
-                        >
-
-                        <label for="termos">
-                            <font
-                                face="Arial"
-                                size="3"
-                            >
-                                Aceito fazer parte da Gibioteca.
-                            </font>
-                        </label>
-
-                        <br><br>
-
-                        <input
-                            type="submit"
-                            value="★ CRIAR MINHA CARTEIRINHA ★"
-                        >
-
-                        &nbsp;&nbsp;
-
-                        <input
-                            type="reset"
-                            value="LIMPAR"
-                        >
-
-                    </center>
-
-                </form>
-
-                <br>
-
-                <hr color="#E63946">
-
-                <center>
-
-                    <font
-                        face="Georgia"
-                        size="3"
-                        color="#457B9D"
-                    >
-                        <i>
-                            "Toda coleção começa com o primeiro gibi."
-                        </i>
-                    </font>
-
-                </center>
-
-            </td>
-
-        </tr>
-
-    </table>
-
-    <br>
-
-    <center>
-
-        <a href="index.html">
-            <font
-                face="Arial"
-                size="4"
-                color="#C1121F"
-            >
-                ← Voltar para a página inicial
-            </font>
-        </a>
-
-        <br><br>
-
-        <hr
-            width="80%"
-            color="#F4A261"
-        >
-
-        <font
-            face="Arial"
-            size="2"
-        >
-            Gibioteca © 2026
-        </font>
-
-    </center>
-
+                    <button type="submit" class="btn btn-primary btn-lg px-4 rounded-pill me-2">Enviar cadastro</button>
+                    <button type="reset" class="btn btn-outline-primary btn-lg px-4 rounded-pill">Limpar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="container py-5 text-center text-dark">
+        <hr class="border border-primary border-2 opacity-75 my-4">
+        <p class="mb-0 fw-semibold">Gibioteca © 2026</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
