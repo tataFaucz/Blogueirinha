@@ -1,188 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gibioteca - Cadastro</title>
+    <title>Blogoteca - Cadastro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
-<body class="bg-comic">
+<body class="bg-blog">
     <div class="container py-4">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded-4 border border-2 border-warning-subtle sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded-4 border border-2 border-warning-subtle">
             <div class="container-fluid px-3 py-2">
-                <a class="navbar-brand comic-title text-primary fw-bold" href="index.html">Gibioteca</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuGibioteca" aria-controls="menuGibioteca" aria-expanded="false" aria-label="Abrir menu">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="menuGibioteca">
-                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="cadastro.html">Cadastro</a></li>
-                        <li class="nav-item"><a class="nav-link" href="gibis.html">Gibis</a></li>
-                        <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
-                    </ul>
+                <a class="navbar-brand blog-title text-primary fw-bold" href="index.php">Blogoteca</a>
+                <div class="navbar-nav ms-auto flex-row gap-3">
+                    <a class="nav-link" href="index.php">Início</a>
+                    <a class="nav-link" href="feed.php">Feed</a>
+                    <a class="nav-link active" href="cadastro.html">Cadastro</a>
+                    <a class="nav-link" href="login.php">Login</a>
+                    <a class="nav-link" href="sobre.html">Sobre</a>
                 </div>
             </div>
         </nav>
     </div>
-
     <main class="container mb-5">
         <section class="card border-0 shadow-lg rounded-4 p-4 p-md-5 bg-white">
-            <div class="text-center mb-4">
-                <h1 class="comic-title text-primary display-5">★ CADASTRE-SE NA GIBIOTECA ★</h1>
-                <p class="lead text-dark mb-0">Crie seu perfil de leitor e faça parte da nossa comunidade!</p>
-            </div>
-
-            <form action="#" method="post" class="row g-3">
-                <fieldset class="col-12 border border-2 rounded-4 p-4 mb-3">
-                    <legend class="float-none px-2 fw-bold text-primary">Dados pessoais</legend>
-
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <label for="nome" class="form-label fw-bold">Nome</label>
-                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome completo" autocomplete="name" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="email" class="form-label fw-bold">E-mail</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="senha" class="form-label fw-bold">Senha</label>
-                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Crie uma senha" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="nascimento" class="form-label fw-bold">Data de nascimento</label>
-                            <input type="date" class="form-control" id="nascimento" name="nascimento">
-                        </div>
-                        <div class="col-md-4">
-                            <label for="telefone" class="form-label fw-bold">Telefone</label>
-                            <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(47) 99999-9999" autocomplete="tel" pattern="\(?[0-9]{2}\)?\s?[0-9]{4,5}-?[0-9]{4}">
-                        </div>
-                        <div class="col-md-4">
-                            <label for="numero-favoritos" class="form-label fw-bold">Gibis por mês</label>
-                            <input type="number" class="form-control" id="numero-favoritos" name="numero-favoritos" min="1" max="100" value="5" step="1">
-                        </div>
-                        <div class="col-md-4">
-                            <label for="cor-favorita" class="form-label fw-bold">Cor preferida</label>
-                            <input type="color" class="form-control form-control-color w-100" id="cor-favorita" name="cor-favorita" value="#E63946" title="Escolha sua cor preferida">
-                        </div>
-                        <div class="col-md-4">
-                            <label for="site-favorito" class="form-label fw-bold">Site favorito</label>
-                            <input type="url" class="form-control" id="site-favorito" name="site-favorito" placeholder="https://exemplo.com" autocomplete="url">
-                        </div>
-                    </div>
-                </fieldset>
-
-                <fieldset class="col-12 border border-2 rounded-4 p-4 mb-3">
-                    <legend class="float-none px-2 fw-bold text-warning">Seu universo de gibis</legend>
-
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <label for="genero" class="form-label fw-bold">Qual seu gênero favorito?</label>
-                            <select class="form-select" id="genero" name="genero" required>
-                                <option value="">Selecione uma opção</option>
-                                <option value="humor">Humor</option>
-                                <option value="aventura">Aventura</option>
-                                <option value="super-herois">Super-heróis</option>
-                                <option value="fantasia">Fantasia</option>
-                                <option value="ficcao">Ficção científica</option>
-                                <option value="terror">Terror</option>
-                                <option value="outros">Outros</option>
-                            </select>
-                        </div>
-                        <div class="col-12">
-                            <p class="fw-bold mb-2">Com que frequência você lê gibis?</p>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="frequencia" id="diariamente" value="diariamente">
-                                <label class="form-check-label" for="diariamente">Diariamente</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="frequencia" id="semanalmente" value="semanalmente">
-                                <label class="form-check-label" for="semanalmente">Toda semana</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="frequencia" id="mensalmente" value="mensalmente">
-                                <label class="form-check-label" for="mensalmente">Todo mês</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="frequencia" id="raramente" value="raramente">
-                                <label class="form-check-label" for="raramente">De vez em quando</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <p class="fw-bold mb-2">Quais tipos de histórias você gosta?</p>
-                            <div class="row g-2">
-                                <div class="col-md-4 form-check">
-                                    <input class="form-check-input" type="checkbox" id="classicos" name="tipos" value="classicos">
-                                    <label class="form-check-label" for="classicos">Clássicos</label>
-                                </div>
-                                <div class="col-md-4 form-check">
-                                    <input class="form-check-input" type="checkbox" id="humor" name="tipos" value="humor">
-                                    <label class="form-check-label" for="humor">Humor</label>
-                                </div>
-                                <div class="col-md-4 form-check">
-                                    <input class="form-check-input" type="checkbox" id="aventura" name="tipos" value="aventura">
-                                    <label class="form-check-label" for="aventura">Aventura</label>
-                                </div>
-                                <div class="col-md-4 form-check">
-                                    <input class="form-check-input" type="checkbox" id="superherois" name="tipos" value="superherois">
-                                    <label class="form-check-label" for="superherois">Super-heróis</label>
-                                </div>
-                                <div class="col-md-4 form-check">
-                                    <input class="form-check-input" type="checkbox" id="fantasia" name="tipos" value="fantasia">
-                                    <label class="form-check-label" for="fantasia">Fantasia</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <label for="nivel-leitura" class="form-label fw-bold">Nível de leitura (1 a 10)</label>
-                            <input type="range" class="form-range" id="nivel-leitura" name="nivel-leitura" min="1" max="10" value="5" oninput="this.nextElementSibling.value = this.value">
-                            <output for="nivel-leitura" class="d-inline-block mt-2 fw-bold text-primary">5</output>
-                        </div>
-                    </div>
-                </fieldset>
-
-                <fieldset class="col-12 border border-2 rounded-4 p-4 mb-3">
-                    <legend class="float-none px-2 fw-bold text-info">Conte para a gente!</legend>
-
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <label for="gibi-favorito" class="form-label fw-bold">Seu gibi favorito</label>
-                            <input type="text" class="form-control" id="gibi-favorito" name="gibi-favorito" placeholder="Ex: Turma da Mônica, Batman...">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="personagem-favorito" class="form-label fw-bold">Personagem favorito</label>
-                            <input type="text" class="form-control" id="personagem-favorito" name="personagem-favorito" placeholder="Ex: Cascão, Superman...">
-                        </div>
-                        <div class="col-12">
-                            <label for="mensagem" class="form-label fw-bold">O que você gosta de ler?</label>
-                            <textarea class="form-control" id="mensagem" name="mensagem" rows="4" placeholder="Conte um pouco sobre seus gostos e suas preferências de leitura..."></textarea>
-                        </div>
-                    </div>
-                </fieldset>
-
-                <div class="col-12 text-center">
-                    <div class="form-check d-inline-flex align-items-center gap-2 mb-3">
-                        <input class="form-check-input mt-0" type="checkbox" id="termos" name="termos" required>
-                        <label class="form-check-label fw-bold" for="termos">Aceito fazer parte da Gibioteca.</label>
-                    </div>
-                    <br>
-                    <button type="submit" class="btn btn-primary btn-lg px-4 rounded-pill me-2">Enviar cadastro</button>
-                    <button type="reset" class="btn btn-outline-primary btn-lg px-4 rounded-pill">Limpar</button>
+            <h1 class="blog-title text-primary display-5">Crie sua conta</h1>
+            <p class="lead">Participe da rede, publique textos e converse com outras pessoas.</p>
+            <form id="formCadastro" action="processar_cadastro.php" method="post" class="row g-3" novalidate>
+                <div class="col-md-6">
+                    <label class="form-label fw-bold" for="nome">Nome</label>
+                    <input class="form-control" id="nome" name="nome" maxlength="150" autocomplete="name" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-bold" for="email">E-mail</label>
+                    <input class="form-control" type="email" id="email" name="email" maxlength="254" autocomplete="email" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-bold" for="senha">Senha</label>
+                    <input class="form-control" type="password" id="senha" name="senha" minlength="8" autocomplete="new-password" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-bold" for="nascimento">Data de nascimento</label>
+                    <input class="form-control" type="date" id="nascimento" name="nascimento">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-bold" for="telefone">Telefone</label>
+                    <input class="form-control" type="tel" id="telefone" name="telefone" maxlength="30" autocomplete="tel">
+                </div>
+                <div class="col-12">
+                    <label class="form-label fw-bold" for="site-favorito">Site pessoal (opcional)</label>
+                    <input class="form-control" type="url" id="site-favorito" name="site-favorito" maxlength="2048" placeholder="https://exemplo.com">
+                </div>
+                <div class="col-12">
+                    <label class="form-label fw-bold" for="mensagem">Sobre você (opcional)</label>
+                    <textarea class="form-control" id="mensagem" name="mensagem" rows="4" maxlength="1000"></textarea>
+                </div>
+                <div class="col-12 form-check">
+                    <input class="form-check-input" type="checkbox" id="termos" name="termos" required>
+                    <label class="form-check-label" for="termos">Aceito fazer parte da Blogoteca.</label>
+                </div>
+                <div id="mensagemCadastro" class="alert alert-warning mt-3" hidden></div>
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Criar conta</button>
+                    <button class="btn btn-outline-secondary" type="reset">Limpar</button>
                 </div>
             </form>
         </section>
     </main>
-
-    <footer class="container py-5 text-center text-dark">
-        <hr class="border border-primary border-2 opacity-75 my-4">
-        <p class="mb-0 fw-semibold">Gibioteca © 2026</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>

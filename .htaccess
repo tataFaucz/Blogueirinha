@@ -1,0 +1,3 @@
+<Files "autenticacao.txt">
+    Require all denied
+</Files>
