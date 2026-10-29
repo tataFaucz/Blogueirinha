@@ -1,4 +1,4 @@
-# Blogoteca
+# Blogueirinh@
 
 Rede social em formato de blog para jovens adultos publicarem sobre seus interesses, descobrirem pessoas e participarem de comunidades.
 
